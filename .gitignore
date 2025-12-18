@@ -205,3 +205,29 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# =================================================================
+# PROJECT SPECIFIC ADDITIONS (Data, ML Models, & App Secrets)
+# =================================================================
+
+# 1. Ignore Large Data Files (Pandas/NumPy/Datasets)
+# Prevents GitHub upload errors and repo bloat
+data/
+*.csv
+*.parquet
+*.xlsx
+*.npy
+*.npz
+
+# 2. Ignore ML Models (XGBoost/Prophet/Pickles)
+# Trained models are often too large for GitHub
+models/
+*.pkl
+*.joblib
+*.bst
+*.onnx
+
+# 3. Streamlit & FastAPI Secrets
+# Never share your private keys or local dashboard configs
+.streamlit/secrets.toml
+auth_secrets.json
